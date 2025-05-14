@@ -120,17 +120,14 @@ function vim-mode-bindkey () {
 
 if [[ -z $VIM_MODE_NO_DEFAULT_BINDINGS ]]; then
     # Emacs-like bindings {{{1
-    vim-mode-bindkey viins vicmd -- beginning-of-line                  '^A'
-    vim-mode-bindkey viins vicmd -- backward-char                      '^B'
-    vim-mode-bindkey viins vicmd -- end-of-line                        '^E'
-    vim-mode-bindkey viins vicmd -- forward-char                       '^F'
-    vim-mode-bindkey viins vicmd -- kill-line                          '^K'
-    vim-mode-bindkey viins vicmd -- history-incremental-search-backward '^R'
-    vim-mode-bindkey viins vicmd -- history-incremental-search-forward  '^S'
-    vim-mode-bindkey viins vicmd -- backward-kill-line                 '^U'
-    vim-mode-bindkey viins vicmd -- backward-kill-word                 '^W'
-    vim-mode-bindkey viins vicmd -- yank                               '^Y'
-    vim-mode-bindkey viins vicmd -- undo                               '^_'
+    vim-mode-bindkey viins -- beginning-of-line                  '^A'
+    vim-mode-bindkey viins -- backward-char                      '^B'
+    vim-mode-bindkey viins -- end-of-line                        '^E'
+    vim-mode-bindkey viins -- forward-char                       '^F'
+    vim-mode-bindkey viins -- kill-line                          '^K'
+    vim-mode-bindkey viins -- backward-kill-line                 '^U'
+    vim-mode-bindkey viins -- backward-kill-word                 '^W'
+    vim-mode-bindkey viins -- yank                               '^Y'
 
     # Avoid key bindings that conflict with <Esc> entering NORMAL mode, like
     # - common movement keys (hljk...)
@@ -214,11 +211,6 @@ if [[ -z $VIM_MODE_NO_DEFAULT_BINDINGS ]]; then
         vim-mode-bindkey       vicmd -- down-line-or-beginning-search  j
         vim-mode-bindkey       vicmd -- up-line-or-beginning-search    k
     fi
-
-    exit-cmd () {exit;}
-    zle -N exit-cmd
-    vim-mode-bindkey       vicmd -- exit-cmd                           Z Z
-    vim-mode-bindkey       vicmd -- exit-cmd                           Z Q
 
 
     # Enable surround text-objects (quotes, brackets) {{{1
