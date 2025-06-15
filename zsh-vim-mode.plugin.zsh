@@ -239,10 +239,9 @@ if [[ -z $VIM_MODE_NO_DEFAULT_BINDINGS ]]; then
     zle -N delete-surround surround
     zle -N change-surround surround
     zle -N add-surround surround
-    vim-mode-bindkey vicmd  -- change-surround cs
-    vim-mode-bindkey vicmd  -- delete-surround ds
-    vim-mode-bindkey vicmd  -- add-surround    ys
-    vim-mode-bindkey visual -- add-surround    S
+    vim-mode-bindkey vicmd         -- change-surround gsr
+    vim-mode-bindkey vicmd         -- delete-surround gsd
+    vim-mode-bindkey vicmd visual  -- add-surround    gsa
 
 
     # Escape shortcut {{{1
