@@ -216,6 +216,8 @@ if [[ -z $VIM_MODE_NO_DEFAULT_BINDINGS ]]; then
         vim-mode-bindkey       vicmd -- up-line-or-beginning-search    k
     fi
 
+    vim-mode-bindkey       vicmd -- down-history  '^[J'
+    vim-mode-bindkey       vicmd -- up-history    '^[K'
 
     # Enable surround text-objects (quotes, brackets) {{{1
 
